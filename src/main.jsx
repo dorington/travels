@@ -97,9 +97,9 @@ function App() {
       <img className="moon-continuation-orbit moon-continuation-soft" src={orbitImage} alt="" />
       <p className="our-label">OUR</p>
       <h2 className="vehicles-title">VEHICLES</h2>
-      <p className="vehicle-label mercedes-label">{vehicle.make}</p>
-      <p className="benz-label">{vehicle.name}</p>
-      <p className="cls-label">{vehicle.model}</p>
+      <p key={`make-${activeVehicle}`} className="vehicle-label mercedes-label vehicle-copy-transition">{vehicle.make}</p>
+      <p key={`name-${activeVehicle}`} className="benz-label vehicle-copy-transition">{vehicle.name}</p>
+      <p key={`model-${activeVehicle}`} className="cls-label vehicle-copy-transition">{vehicle.model}</p>
       <svg className="feature-icon steering-icon" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" /><circle cx="16" cy="16" r="3" /><path d="M4 13h7l3 3M28 13h-7l-3 3M16 19v10" /></svg>
       <svg className="feature-icon wifi-icon" viewBox="0 0 36 28" aria-hidden="true"><path d="M2 10c9-10 23-10 32 0M7 16c6-6 16-6 22 0M13 22c3-3 7-3 10 0" /><circle cx="18" cy="25" r="1.5" /></svg>
       <svg className="feature-icon flash-icon" viewBox="0 0 24 32" aria-hidden="true"><path d="M14 1 3 18h8l-1 13 11-18h-8z" /></svg>
@@ -109,9 +109,9 @@ function App() {
       <span className="feature-label wifi-label">WI-FI</span>
       <span className="feature-label hybrid-label">hybrid</span>
       <span className="feature-label engine-label">engine</span>
-      <p className="vehicle-description">{vehicle.description}</p>
-      <div className="rolls-shadow" aria-hidden="true" />
-      <img className="rolls-royce" src={vehicle.image} alt={`${vehicle.make} ${vehicle.name} chauffeur vehicle`} />
+      <p key={`description-${activeVehicle}`} className="vehicle-description vehicle-copy-transition">{vehicle.description}</p>
+      <div key={`shadow-${activeVehicle}`} className="rolls-shadow vehicle-shadow-transition" aria-hidden="true" />
+      <img key={`car-${activeVehicle}`} className="rolls-royce vehicle-transition" src={vehicle.image} alt={`${vehicle.make} ${vehicle.name} chauffeur vehicle`} />
       <button className="vehicle-arrow vehicle-arrow-prev" type="button" onClick={showPreviousVehicle} aria-label="Previous vehicle"><span /></button>
       <div className="vehicle-dots" aria-label={`Vehicle ${activeVehicle + 1} of ${vehicleSlides.length}`}><i className={activeVehicle === 0 ? 'active' : ''} /><i className={activeVehicle === 1 ? 'active' : ''} /></div>
       <button className="vehicle-arrow vehicle-arrow-next" type="button" onClick={showNextVehicle} aria-label="Next vehicle"><span /></button>
